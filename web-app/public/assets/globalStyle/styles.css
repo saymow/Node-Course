@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root {
+  --Primary: #eff6ee;
+  --Secondary: #9197ae;
+  --Text: #333;
+  --Tertiary: #273043;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  color: var(--Text);
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--Primary);
+}
+
+header {
+  cursor: default;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 5rem;
+  width: 100%;
+  padding: 0 2rem;
+  background-color: var(--Secondary);
+  color: var(--Primary);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header > div {
+  max-width: 1360px;
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+header > div > h1 {
+  margin-right: 2rem;
+}
+
+header > div > ul {
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+header > div > ul > li {
+  list-style: none;
+  height: 100%;
+  padding: 0 1rem;
+  border: 2px solid var(--Secondary);
+}
+
+header > div > ul > li > a {
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+header > div > ul > li:hover {
+  opacity: 0.7;
+}
+
+footer {
+  position: static;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 5rem;
+  background-color: var(--Tertiary);
+  color: var(--Primary);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+footer > span {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+
+.container {
+  max-width: 1260px;
+  width: 100%;
+  margin: 7rem auto 0 auto;
+  min-height: calc(100vh - (5rem + 7rem));
+}
+
+.container img {
+  width: 100%;
+}
+
+.container > h1, p {
+  margin-bottom: .5rem;
+}
+
+input {
+  padding: 0.5rem 1rem;
+  font-size: 1.5rem;
+  border-radius: 0.2rem;
+
+  color: var(--Text);
+  border: 1px solid var(--Secondary);
+}
+
+button {
+  cursor: pointer;
+  font-size: 1.5rem;
+  padding: 0.5rem 1rem;
+
+  color: var(--Primary);
+  background-color: var(--Secondary);
+  border: 1px solid var(--Secondary);
+
+  transition: all 200ms ease;
+}
+
+button:hover {
+  color: var(--Secondary);
+  background-color: transparent;
+}
+
+.response-div {
+  width: 100%;
+  margin: 5rem auto;
+  text-align: center;
+}
+
+.response-div > p {
+  font-size: 2rem;
+}

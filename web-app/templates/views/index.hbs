@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="/assets/globalStyle/styles.css" />
+  <link rel="icon" href="/assets/images/icon.png">
+  <title>Weather</title>
+</head>
+
+<body>
+  {{>header}}
+  <div class="container">
+    <h1>{{title}}</h1>
+    <p>{{description}}</p>
+    <form class="form-el">
+      <input type="text" id="location-input">
+      <button type="submit">Search</button>
+    </form>
+    <div class="response-div">
+      <div id="loading-element"></div>
+      <p id="response"></p>
+    </div>
+  </div>
+  {{>footer}}
+  <script src="/assets/js/app.js"></script>
+</body>
+
+</html>
