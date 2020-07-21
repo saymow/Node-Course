@@ -17,10 +17,12 @@ async function handleSubmit(event) {
 }
 
 function apiRequest(location) {
-  return fetch("http://localhost:3333/weather?address=" + location)
+  return fetch("/weather?address=" + location)
     .then((data) => data.json())
     .then((response) => {
-      return response.error ? response.error : `${response.location}<br>${response.data}` 
+      return response.error
+        ? response.error
+        : `${response.location}<br>${response.data}`;
     });
 }
 
