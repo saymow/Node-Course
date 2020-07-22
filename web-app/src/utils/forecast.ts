@@ -12,10 +12,11 @@ const forecast = (latitude: number, longitude: number, cb: foreCastCb) => {
         if (data.current.weather_descriptions.length === 0)
           throw "Unable to find location. Try another search.";
         const [description] = data.current.weather_descriptions;
-        const { temperature, feelslike } = data.current;
+        const { temperature, feelslike, humidity } = data.current;
+        console.log(data);
         cb(
           undefined,
-          `The weather is currently ${description}. It's ${temperature}° out. but it feels like ${feelslike}°.`
+          `The weather is currently ${description}. It's ${temperature}° out. but it feels like ${feelslike}°.<br>The humidity is ${humidity}°.`
         );
       } catch (err) {
         cb(err, undefined);
