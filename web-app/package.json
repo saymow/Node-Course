@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start:dev": "nodemon -e ts,hbs,css --exec ts-node ./src/server.ts",
-    "start": "ts-node /src/server.ts"
+    "start": "ts-node ./src/server.ts"
   },
   "keywords": [],
   "author": "",
