@@ -22,7 +22,7 @@ function apiRequest(location) {
     .then((response) => {
       return response.error
         ? response.error
-        : `${response.location}<br>${response.data}`;
+        : `${response.location}<br> ${response.data}`;
     });
 }
 
