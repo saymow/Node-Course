@@ -122,7 +122,7 @@ UserSchema.methods.generateAuthToken = function () {
             switch (_a.label) {
                 case 0:
                     user = this;
-                    token = jsonwebtoken_1.default.sign({ _id: user._id.toString() }, process.env.JWT_TOKEN);
+                    token = jsonwebtoken_1.default.sign({ _id: user._id.toString() }, process.env.JWT_SECRET);
                     user.tokens = __spreadArrays(user.tokens, [{ token: token }]);
                     return [4 /*yield*/, user.save()];
                 case 1:
