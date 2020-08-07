@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "ts-node ./src/index.ts",
+    "start": "env-cmd -f ./config/.env node ./dist/index.js",
     "dev": "env-cmd -f ./config/.env nodemon --exec ts-node --files ./src/index.ts"
   },
   "keywords": [],

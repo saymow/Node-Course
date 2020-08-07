@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 mongoose
-  .connect(process.env.MONGO_CONNECT as string, {
+  .connect(String(process.env.MONGO_CONNECT), {
     useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true,
