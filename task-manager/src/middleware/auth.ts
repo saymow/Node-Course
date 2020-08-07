@@ -24,7 +24,7 @@ const auth = async (req: Request, res: Response, next: NextFunction) => {
 
     next();
   } catch (error) {
-    res.status(401).send();
+    res.status(401).send(error);
   }
 };
 
