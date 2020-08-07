@@ -65,6 +65,7 @@ exports.default = {
                         return [3 /*break*/, 5];
                     case 4:
                         error_1 = _a.sent();
+                        console.log(error_1);
                         res.status(500).send();
                         return [3 /*break*/, 5];
                     case 5: return [2 /*return*/];
@@ -74,30 +75,26 @@ exports.default = {
     },
     signIn: function (req, res) {
         return __awaiter(this, void 0, void 0, function () {
-            var _a, email, password, user, token, _b, _c, _d, error_2;
-            return __generator(this, function (_e) {
-                switch (_e.label) {
+            var _a, email, password, user, token, error_2;
+            return __generator(this, function (_b) {
+                switch (_b.label) {
                     case 0:
-                        _e.trys.push([0, 4, , 5]);
+                        _b.trys.push([0, 3, , 4]);
                         _a = req.body, email = _a.email, password = _a.password;
                         return [4 /*yield*/, user_1.default.findByCredentials(email, password)];
                     case 1:
-                        user = _e.sent();
+                        user = _b.sent();
                         return [4 /*yield*/, user.generateAuthToken()];
                     case 2:
-                        token = _e.sent();
-                        _c = (_b = res).send;
-                        _d = {};
-                        return [4 /*yield*/, user];
+                        token = _b.sent();
+                        res.send({ user: user, token: token });
+                        return [3 /*break*/, 4];
                     case 3:
-                        _c.apply(_b, [(_d.user = _e.sent(), _d.token = token, _d)]);
-                        return [3 /*break*/, 5];
-                    case 4:
-                        error_2 = _e.sent();
+                        error_2 = _b.sent();
                         console.log(error_2);
                         res.status(401).send(error_2);
-                        return [3 /*break*/, 5];
-                    case 5: return [2 /*return*/];
+                        return [3 /*break*/, 4];
+                    case 4: return [2 /*return*/];
                 }
             });
         });

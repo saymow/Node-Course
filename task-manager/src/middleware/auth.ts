@@ -6,11 +6,11 @@ const auth = async (req: Request, res: Response, next: NextFunction) => {
   try {
     const { authorization } = req.headers;
 
-    if (!authorization) throw new Error();
+    if (!authorization) throw new Error("Token must be provided.");
     let parts = authorization.split(" ");
-    if (parts.length !== 2) throw new Error();
+    if (parts.length !== 2) throw new Error("Token malformated.");
     const [schema, token] = parts;
-    if (schema !== "Bearer") throw new Error();
+    if (schema !== "Bearer") throw new Error("Token invalid schema.");
 
     const decoded: any = jwt.verify(token, process.env.JWT_SECRET as string);
     const user = await User.findOne({
@@ -18,7 +18,7 @@ const auth = async (req: Request, res: Response, next: NextFunction) => {
       "tokens.token": token,
     });
 
-    if (!user) throw new Error();
+    if (!user) throw new Error("Invalid token.");
 
     req.user = user;
 

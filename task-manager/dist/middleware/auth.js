@@ -49,13 +49,13 @@ var auth = function (req, res, next) { return __awaiter(void 0, void 0, void 0, 
                 _a.trys.push([0, 2, , 3]);
                 authorization = req.headers.authorization;
                 if (!authorization)
-                    throw new Error();
+                    throw new Error("Token must be provided.");
                 parts = authorization.split(" ");
                 if (parts.length !== 2)
-                    throw new Error();
+                    throw new Error("Token malformated.");
                 schema = parts[0], token = parts[1];
                 if (schema !== "Bearer")
-                    throw new Error();
+                    throw new Error("Token invalid schema.");
                 decoded = jsonwebtoken_1.default.verify(token, process.env.JWT_SECRET);
                 return [4 /*yield*/, user_1.default.findOne({
                         _id: decoded._id,
@@ -64,7 +64,7 @@ var auth = function (req, res, next) { return __awaiter(void 0, void 0, void 0, 
             case 1:
                 user = _a.sent();
                 if (!user)
-                    throw new Error();
+                    throw new Error("Invalid token.");
                 req.user = user;
                 next();
                 return [3 /*break*/, 3];
