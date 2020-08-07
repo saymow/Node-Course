@@ -70,7 +70,7 @@ var auth = function (req, res, next) { return __awaiter(void 0, void 0, void 0, 
                 return [3 /*break*/, 3];
             case 2:
                 error_1 = _a.sent();
-                res.status(401).send();
+                res.status(401).send(error_1);
                 return [3 /*break*/, 3];
             case 3: return [2 /*return*/];
         }
