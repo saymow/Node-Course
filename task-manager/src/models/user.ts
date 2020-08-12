@@ -81,7 +81,9 @@ export interface iUser extends Document {
   password: string;
   age: number;
   tasks: Array<Object>;
-  tokens: Object[];
+  tokens: {
+    token: string;
+  }[];
   avatar?: Buffer;
   generateAuthToken(): Promise<string>;
   toJSON(): Object;

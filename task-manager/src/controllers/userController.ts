@@ -20,8 +20,7 @@ export default {
 
       res.status(201).send({ user, token });
     } catch (error) {
-      console.log(error);
-      res.status(500).send();
+      res.status(400).send();
     }
   },
 
@@ -126,7 +125,7 @@ export default {
 
     await req.user.save();
 
-    res.status(201).send();
+    res.send();
   },
 
   async deleteImage(req: Request, res: Response) {

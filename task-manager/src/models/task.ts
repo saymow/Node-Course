@@ -1,3 +1,4 @@
+import { Model, Document } from "mongoose";
 import mongoose from "../db/mongoose";
 
 const TaskSchema = new mongoose.Schema(
@@ -22,6 +23,16 @@ const TaskSchema = new mongoose.Schema(
   }
 );
 
-const Task = mongoose.model("tasks", TaskSchema);
+interface ITask extends Document {
+  description: string;
+  completed: boolean;
+}
+
+interface ITaskModel extends Model<ITask> {}
+
+const Task: ITaskModel = mongoose.model(
+  "tasks",
+  TaskSchema
+);
 
 export default Task;

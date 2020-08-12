@@ -1,5 +1,5 @@
 import { Document } from "mongoose";
-import { Request, Response, request } from "express";
+import { Request, Response } from "express";
 
 import Task from "../models/task";
 
@@ -20,7 +20,7 @@ export default {
       await task.save();
       res.status(201).send(task);
     } catch (error) {
-      res.status(500).send();
+      res.status(400).send();
     }
   },
 
